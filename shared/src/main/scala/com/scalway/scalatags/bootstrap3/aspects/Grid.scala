@@ -1,19 +1,19 @@
-package com.scalway.scalatags.b3.aspects
+package com.scalway.scalatags.bootstrap3.aspects
 
-import com.scalway.scalatags.b3.abst.B3Classes
+import com.scalway.scalatags.bootstrap3.abst.B3Cls
 
 /**
   * Created by slovic on 29.01.16.
   */
-object B3Grid {
+object Grid {
 
-  implicit class B3ColClasses(val allClassNames:Seq[String]) extends AnyVal with B3Classes {
+  implicit class ColCls(val allClassNames:Seq[String]) extends AnyVal with B3Cls {
     private def className(name:String, value:Int): String =
       if (value>=0) s"col-$name-$value"
       else          null
 
     protected def append(name:String, size:Int, offset:Int,pull:Int= -1, push:Int= -1) =
-      new B3ColClasses( Seq(
+      new ColCls( List(
         className(name + "-pull", pull),
         className(name + "-push", push),
         className(name + "-offset", offset),

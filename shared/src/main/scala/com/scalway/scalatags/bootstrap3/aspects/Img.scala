@@ -1,14 +1,14 @@
-package com.scalway.scalatags.b3.aspects
+package com.scalway.scalatags.bootstrap3.aspects
 
-import com.scalway.scalatags.b3.abst.B3Classes
+import com.scalway.scalatags.bootstrap3.abst.B3Cls
 
 /**
   * Created by slovic on 29.01.16.
   */
-object B3Img {
+object Img {
 
-  implicit class B3ImageClasses(val allClassNames:Seq[String]) extends AnyVal
-    with B3Classes {
+  implicit class B3ImageCls(val allClassNames:Seq[String]) extends AnyVal
+    with B3Cls {
     def className: String = "img"
 
     /* Adds rounded corners to an image (not available in IE8)*/

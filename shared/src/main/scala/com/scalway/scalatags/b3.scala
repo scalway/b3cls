@@ -1,20 +1,21 @@
 package com.scalway.scalatags
 
-import com.scalway.scalatags.b3.abst.B3Classes
-import com.scalway.scalatags.b3.aspects.B3Dropdown.B3DropdownClasses
-import com.scalway.scalatags.b3.aspects.B3Grid.B3ColClasses
-import com.scalway.scalatags.b3.aspects.B3Img.B3ImageClasses
-import com.scalway.scalatags.b3.aspects.B3Nav.B3NavClasses
-import com.scalway.scalatags.b3.aspects.B3Tables.B3TablesClasses
-import com.scalway.scalatags.b3.aspects.B3Text.{B3TextClasses, B3BackgroundClasses}
-import com.scalway.scalatags.b3.aspects.Glyphicons
-import com.scalway.scalatags.b3.aspects.B3Visible._
-import com.scalway.scalatags.b3.aspects.B3Btn._
+import com.scalway.scalatags.bootstrap3.abst.B3Cls
+import com.scalway.scalatags.bootstrap3.aspects.Dropdown.DropdownCls
+import com.scalway.scalatags.bootstrap3.aspects.Grid.ColCls
+import com.scalway.scalatags.bootstrap3.aspects.Img.B3ImageCls
+import com.scalway.scalatags.bootstrap3.aspects.Nav.B3NavCls
+import com.scalway.scalatags.bootstrap3.aspects.Navbar.{B3NavbarCls, B3NavbarHelpersCls}
+import com.scalway.scalatags.bootstrap3.aspects.Tables.B3TablesCls
+import com.scalway.scalatags.bootstrap3.aspects.Text.{B3TextCls, B3BackgroundCls}
+import com.scalway.scalatags.bootstrap3.aspects.Glyphicons
+import com.scalway.scalatags.bootstrap3.aspects.Visible._
+import com.scalway.scalatags.bootstrap3.aspects.Btn._
 
 /**
   * Created by slovic on 29.01.16.
   */
-package object b3 extends B3Classes {
+package object b3 extends B3Cls {
 
   /** Forces an element to be hidden OR if
     * returns hidden  OR  hidden-[MEDIA-QUERY].
@@ -24,7 +25,7 @@ package object b3 extends B3Classes {
     * visible.md           -> "visible-md"
     * visible.md.inline.xs -> "visible-md-inline visible-xs"
     * */
-  def visible = new B3VisibleOnlyClasses("visible"::Nil)
+  def visible = new VisibleOnlyCls("visible"::Nil)
 
   /** Forces an element to be hidden OR if
     * returns hidden  OR  hidden-[MEDIA-QUERY].
@@ -33,25 +34,31 @@ package object b3 extends B3Classes {
     * hidden.md    -> "hidden-md"
     * hidden.md.xs -> "hidden-md hidden-xs"
     * */
-  def hidden = new B3HiddenOnlyClasses("hidden"::Nil)
+  def hidden = new B3HiddenOnlyCls("hidden"::Nil)
 
-  def col = new B3ColClasses(Nil)
-  def btn = new B3BtnClasses("btn"::Nil)
+  def col = new ColCls(Nil)
+
+  def btn = new BtnCls("btn"::Nil)
+
   def glyphicon = Glyphicons
-  def bg = new B3BackgroundClasses(Nil)
-  def text = new B3TextClasses(Nil)
+
+  def bg = new B3BackgroundCls(Nil)
+
+  def text = new B3TextCls(Nil)
 
   /** Adds basic styling (light padding and only horizontal dividers) to any <table> */
-  def table = new B3TablesClasses("table"::Nil)
+  def table = new B3TablesCls("table"::Nil)
 
-  def img = new B3ImageClasses(Nil)
+  def img = new B3ImageCls(Nil)
 
-  def nav = new B3NavClasses("nav"::Nil)
+  def nav = new B3NavCls("nav"::Nil)
 
-  def tab = new B3NavClasses(Nil)
+  def tab = new B3NavCls(Nil)
+
+  def navbar = new B3NavbarCls(Nil)
 
   //DROPDOWN
-  def dropdown = new B3DropdownClasses(Nil)
+  def dropdown = new DropdownCls(Nil)
 
   /** Indicates a dropup menu*/
   def dropup = apply("dropup")

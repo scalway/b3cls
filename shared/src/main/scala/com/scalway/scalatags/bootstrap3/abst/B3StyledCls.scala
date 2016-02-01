@@ -1,11 +1,11 @@
-package com.scalway.scalatags.b3.abst
+package com.scalway.scalatags.bootstrap3.abst
 
-import com.scalway.scalatags.b3.abst.B3Classes.CREATE
+import com.scalway.scalatags.bootstrap3.abst.B3Cls.CREATE
 
 /**
   * Created by slovic on 29.01.16.
   */
-trait B3StyledClasses[STYLE_RET] extends Any with B3Classes {
+trait B3StyledCls[STYLE_RET] extends Any with B3Cls {
   def className:String
 
   /** Indicates a default/standard button */

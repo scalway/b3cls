@@ -1,12 +1,12 @@
-package com.scalway.scalatags.b3.aspects
+package com.scalway.scalatags.bootstrap3.aspects
 
-import com.scalway.scalatags.b3.abst.B3Classes
+import com.scalway.scalatags.bootstrap3.abst.B3Cls
 
 /**
   * Created by slovic on 29.01.16.
   */
 object Glyphicons extends {
-    private def icon(name:String) = new B3Classes {
+    private def icon(name:String) = new B3Cls {
         override val allClassNames: Seq[String] = "glyphicon" :: name :: Nil
     }
 

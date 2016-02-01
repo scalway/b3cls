@@ -1,6 +1,6 @@
-package com.scalway.scalatags.b3.abst
+package com.scalway.scalatags.bootstrap3.abst
 
-import com.scalway.scalatags.b3.abst.B3Classes.CREATE
+import com.scalway.scalatags.bootstrap3.abst.B3Cls.CREATE
 
 /**
   * tricky way to make possible composition like that
@@ -13,7 +13,7 @@ import com.scalway.scalatags.b3.abst.B3Classes.CREATE
   * If someone use e.g. media queries on that we want to throw away "hidden"
   * class and use only them from media queries.
   */
-trait B3ComplexOrClasses extends Any with B3Classes {
+trait B3ComplexOrCls extends Any with B3Cls {
   override protected def append[T](str: String)(implicit c: CREATE[T]): T = c(str :: Nil)
 }
 

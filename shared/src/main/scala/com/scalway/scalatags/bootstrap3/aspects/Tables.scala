@@ -1,14 +1,14 @@
-package com.scalway.scalatags.b3.aspects
+package com.scalway.scalatags.bootstrap3.aspects
 
-import com.scalway.scalatags.b3.abst.{B3Classes, B3SizedClasses, B3StyledClasses}
+import com.scalway.scalatags.bootstrap3.abst.{B3Cls, B3SizedCls, B3StyledCls}
 
 /**
   * Created by slovic on 29.01.16.
   */
-object B3Tables {
+object Tables {
 
-  implicit class B3TablesClasses(val allClassNames:Seq[String]) extends AnyVal
-    with B3Classes {
+  implicit class B3TablesCls(val allClassNames:Seq[String]) extends AnyVal
+    with B3Cls {
     def className: String = "table"
 
     /*Adds zebra.striping to any table row within <tbody> (not available in IE8)*/
