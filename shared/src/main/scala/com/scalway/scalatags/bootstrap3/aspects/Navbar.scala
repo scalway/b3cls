@@ -30,7 +30,7 @@ object Navbar {
   }
 
   trait NavbarNavbarCls extends Any with B3Cls {
-    private def appendPost[T](postfix:String) = append[NavbarNavbarCls]("navbar-"+postfix)
+    private def appendPost[T](postfix:String) = append[NavbarNavbarCls]("navbar", "navbar-"+postfix)
     //navbar builder
     def default = appendPost("default")
     def inverse = appendPost("inverse")

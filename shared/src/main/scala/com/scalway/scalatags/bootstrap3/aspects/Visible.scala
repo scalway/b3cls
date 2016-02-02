@@ -27,9 +27,9 @@ object Visible {
   implicit class VisibleExtCls(val allClassNames:MODEL) extends AnyVal
     with B3Cls
     with MediaQueryCls[VisibleExtCls] {
-    def inline:VisibleCls = concatToLast[VisibleCls]("-inline")
-    def block:VisibleCls = concatToLast[VisibleCls]("-block")
-    def inlineBlock:VisibleCls = concatToLast[VisibleCls]("-inline-block")
+    def inline:VisibleCls = appendToLast[VisibleCls]("-inline")
+    def block:VisibleCls = appendToLast[VisibleCls]("-block")
+    def inlineBlock:VisibleCls = appendToLast[VisibleCls]("-inline-block")
     override def className: String = "visible"
   }
 

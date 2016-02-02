@@ -14,6 +14,6 @@ import com.scalway.scalatags.bootstrap3.abst.B3Cls.CREATE
   * class and use only them from media queries.
   */
 trait B3ComplexOrCls extends Any with B3Cls {
-  override protected def append[T](str: String)(implicit c: CREATE[T]): T = c(str :: Nil)
+  override protected def append[T](str: String*)(implicit c: CREATE[T]): T = c(str ++: Nil)
 }
 

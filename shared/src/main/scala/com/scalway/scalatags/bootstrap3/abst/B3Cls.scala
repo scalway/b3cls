@@ -11,7 +11,6 @@ trait B3Cls extends Any { self =>
   protected val allClassNames:MODEL
 
   /**
-    *
     * how to add new string to collection
  *
     * @param str what class add to collection
@@ -19,13 +18,24 @@ trait B3Cls extends Any { self =>
     * @tparam T what should be result type
     * @return new collection with added this class name
     */
-  protected def append[T](str:String)(implicit c:CREATE[T]):T = c(str +: allClassNames)
+  protected def append[T](str: String*)(implicit c:CREATE[T]):T = c(str ++: allClassNames)
 
-  protected def concatToLast[T](up:String => String)(implicit c:CREATE[T]):T = c(up(allClassNames.head) +: allClassNames.tail)
+  /**
+    * we change lastly added classname using up function
+    * @param c describe how to create result
+    * @tparam T what should be result type
+    * @return new collection with added this class name
+    */
 
-  protected def concatToLast[T](append:String)(implicit c:CREATE[T]):T = c((allClassNames.head + append) +: allClassNames.tail)
+  protected def mapLast[T](up:String => String)(implicit c:CREATE[T]):T = c(up(allClassNames.head) +: allClassNames.tail)
 
-  protected def appendAll[T](str:MODEL)(implicit c:CREATE[T]):T = c(str ++ allClassNames)
+  /**
+    * we concat last added classname with this postfix
+    * @param c describe how to create result
+    * @tparam T what should be result type
+    * @return new collection with added this class name
+    */
+  protected def appendToLast[T](append:String)(implicit c:CREATE[T]):T = c((allClassNames.head + append) +: allClassNames.tail)
 
   /** same as append but create same type */
 //  protected def appendThis(str:String*)(implicit c:CREATE[this.type]):this.type = append[this.type](str)(c)
@@ -37,17 +47,20 @@ trait B3Cls extends Any { self =>
   protected def alwaysExclude():MODEL = List()
 
   //just adds classes to collection. It should be overriden to work properly
-  @deprecated("we should use append or appendThis")
+  @deprecated("we should use append")
   def apply(cls:String):B3Cls = new B3Cls {
     override val allClassNames: MODEL = cls +: self.allClassNames
   }
 
+  def ++(other:B3Cls) = new B3Cls() {
+    override protected val allClassNames: MODEL = self.allClassNames ++ other.allClassNames
+  }
+
   override def toString: String = classes.mkString(" ")
-  def classes = allClassNames.filter(_!=null)
+  def classes = allClassNames.filter(_!=null).distinct
 }
 
 object B3Cls {
-  val logger = Logger.getLogger("B3Classes")
   type MODEL = Seq[String]
   type CREATE[T] = MODEL => T
 }

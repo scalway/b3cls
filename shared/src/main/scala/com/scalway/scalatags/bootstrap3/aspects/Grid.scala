@@ -8,6 +8,7 @@ import com.scalway.scalatags.bootstrap3.abst.B3Cls
 object Grid {
 
   implicit class ColCls(val allClassNames:Seq[String]) extends AnyVal with B3Cls {
+
     private def className(name:String, value:Int): String =
       if (value>=0) s"col-$name-$value"
       else          null
