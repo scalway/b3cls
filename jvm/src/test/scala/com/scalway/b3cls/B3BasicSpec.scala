@@ -1,10 +1,9 @@
-package com.scalway.scalatags
+package com.scalway.b3cls
 
 import org.scalatest.{WordSpec, MustMatchers}
 
 class B3BasicSpec extends WordSpec with MustMatchers {
   import b3._
-
   //______________________________________________________________
 
   "'b3.col" should {
@@ -23,7 +22,7 @@ class B3BasicSpec extends WordSpec with MustMatchers {
 
   "b3.glyphicon" should {
     "create at least one icon" in {
-      (glyphicon apple).classes must contain theSameElementsAs
+      (glyphicon.apple).classes must contain theSameElementsAs
         Seq("glyphicon-apple", "glyphicon")
     }
 

@@ -1,15 +1,15 @@
-package com.scalway.scalatags.bootstrap3.aspects
+package com.scalway.b3cls.impl.aspects
 
-import com.scalway.scalatags.bootstrap3.abst.B3Cls
-import com.scalway.scalatags.bootstrap3.aspects.Btn.BtnCls
-import com.scalway.scalatags.bootstrap3.aspects.Dropdown.DropdownCls
-import com.scalway.scalatags.bootstrap3.aspects.Grid.ColCls
-import com.scalway.scalatags.bootstrap3.aspects.Img.B3ImageCls
-import com.scalway.scalatags.bootstrap3.aspects.Nav.B3NavCls
-import com.scalway.scalatags.bootstrap3.aspects.Navbar.B3NavbarCls
-import com.scalway.scalatags.bootstrap3.aspects.Tables.B3TablesCls
-import com.scalway.scalatags.bootstrap3.aspects.Text.{B3BackgroundCls, B3TextCls}
-import com.scalway.scalatags.bootstrap3.aspects.Visible.{B3HiddenOnlyCls, VisibleOnlyCls}
+import Btn.BtnCls
+import Dropdown.DropdownCls
+import Grid.ColCls
+import Img.B3ImageCls
+import Nav.B3NavCls
+import Navbar.B3NavbarCls
+import Tables.B3TablesCls
+import Text.{B3BackgroundCls, B3TextCls}
+import Visible.{B3HiddenOnlyCls, VisibleOnlyCls}
+import com.scalway.b3cls.impl.abst.B3Cls
 
 /**
   * Created by slovic on 29.01.16.
@@ -136,6 +136,8 @@ object B3 {
     def active = append[B3]("active")
 
     def collapse = append[B3]("collapse")
+
+    def collapsed = append[B3]("collapsed")
   }
 }
 

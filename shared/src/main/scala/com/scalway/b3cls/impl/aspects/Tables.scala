@@ -1,6 +1,6 @@
-package com.scalway.scalatags.bootstrap3.aspects
+package com.scalway.b3cls.impl.aspects
 
-import com.scalway.scalatags.bootstrap3.abst.{B3Cls, B3SizedCls, B3StyledCls}
+import com.scalway.b3cls.impl.abst.B3Cls
 
 /**
   * Created by slovic on 29.01.16.
@@ -15,13 +15,13 @@ object Tables {
     def striped = append(className + "-striped")
 
     /*Adds border on all sides of the table and cells*/
-    def bordered = append(className + "-bordered");
+    def bordered = append(className + "-bordered")
 
     /*Enables a hover state on table rows within a <tbody>*/
-    def hover = append(className + "-hover");
+    def hover = append(className + "-hover")
 
     /*Makes table more compact by cutting cell padding in half*/
-    def condensed = append(className + "-condensed");
+    def condensed = append(className + "-condensed")
 
   }
 

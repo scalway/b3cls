@@ -1,19 +1,19 @@
 
 
-lazy val scalatagsB3 = crossProject
+lazy val b3cls = crossProject
   .crossType(CrossType.Full)
   .in(file("."))
   .settings(
     resolvers += Resolver.jcenterRepo,
     version := "0.0.4",
     organization := "com.scalway",
-    name := "scalatags-b3",
+    name := "b3cls",
     licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
     javacOptions ++= Seq("-source", "1.6", "-target", "1.6"),
     scalaVersion := "2.11.7",
     crossScalaVersions := Seq("2.10.6", "2.11.7"),
     bintrayPackageLabels := Seq("scala", "scalatags", "bootstrap3", "twitter bootstrap"),
-    bintrayVcsUrl := Some("git@github.com/scalway/scalatagsBootstrap3")
+    bintrayVcsUrl := Some("git@github.com/scalway/b3cls")
   ).jvmSettings(
     testFrameworks += TestFrameworks.ScalaTest,
     libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1" % "test"
@@ -21,8 +21,8 @@ lazy val scalatagsB3 = crossProject
     requiresDOM := false
   )
 
-val scalatagsB3js  = scalatagsB3 .js
-val scalatagsB3jvm = scalatagsB3 .jvm
+val b3js  = b3cls .js
+val b3jvm = b3cls .jvm
 
 lazy val example = project.in(file("./example"))
   .settings(
@@ -30,8 +30,8 @@ lazy val example = project.in(file("./example"))
     scalaVersion := "2.11.7",
     licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
     organization := "com.scalway",
-    name := "scalatags-b3-examples",
-    mainClass in Compile := Some("com.scalway.scalatagsb3example.JSTutorialApp"),
+    name := "b3cls-example",
+    mainClass in Compile := Some("com.scalway.b3cls.example.JSTutorialApp"),
     persistLauncher := true,
     sourceDirectories in Compile += baseDirectory.value / ".." / "shared",
     libraryDependencies ++= Seq(
@@ -40,8 +40,8 @@ lazy val example = project.in(file("./example"))
       "be.doeraene"  %%% "scalajs-jquery" % "0.8.1" withJavadoc() withSources()
     )
   )
-  .dependsOn(scalatagsB3js)
+  .dependsOn(b3js)
   .enablePlugins(ScalaJSPlugin)
 
 lazy val root = project.in(file("."))
-  .aggregate(scalatagsB3js, scalatagsB3jvm)
+  .aggregate(b3js, b3jvm)

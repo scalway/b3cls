@@ -1,6 +1,6 @@
-package com.scalway.scalatags.bootstrap3.abst
+package com.scalway.b3cls.impl.abst
 
-import com.scalway.scalatags.bootstrap3.abst.B3Cls._
+import B3Cls._
 
 /**
   * Created by slovic on 29.01.16.

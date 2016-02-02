@@ -1,6 +1,6 @@
-package com.scalway.scalatags.bootstrap3.abst
+package com.scalway.b3cls.impl.abst
 
-import com.scalway.scalatags.bootstrap3.abst.B3Cls.CREATE
+import B3Cls.CREATE
 
 /**
   * tricky way to make possible composition like that

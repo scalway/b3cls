@@ -5,12 +5,12 @@ I'm not sure if it'll be useful for someone. It's not production ready and is no
 
 how to use it
 ------------------------------------------------------
-
+You can use it in scalaJs and normal scala projects.
 in build.sbt add:
 ```
 resolvers += "scalway bintray repo" at "http://dl.bintray.com/scalway/maven"
 
-libraryDependencies += "com.scalway" %%% "b3cls" % "0.0.1"
+libraryDependencies += "com.scalway" %%% "b3cls" % "0.0.4"
 ```
 
 What does is do
@@ -38,4 +38,5 @@ and it'll produce string like that:
 "col-xs-10 col-xs-pull-2 col-sm-8 col-md-8 col-lg-6 col-lg-offset-2"
 ```
 
-we support also other bootstrap 3 classes (but still not all).
+we support also other bootstrap classes (but still not all). 
+col and "visible" "hidden" are most useful. other stuff is still experimental and can be changed anytime.

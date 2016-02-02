@@ -1,6 +1,6 @@
-package com.scalway.scalatags.bootstrap3.aspects
+package com.scalway.b3cls.impl.aspects
 
-import com.scalway.scalatags.bootstrap3.abst.{B3StyledCls, B3SizedCls, B3Cls}
+import com.scalway.b3cls.impl.abst.{B3StyledCls, B3Cls, B3SizedCls}
 
 /**
   * Created by slovic on 29.01.16.

@@ -1,7 +1,7 @@
-package com.scalway.scalatags.bootstrap3.aspects
+package com.scalway.b3cls.impl.aspects
 
-import com.scalway.scalatags.bootstrap3.abst.B3Cls.{MODEL, CREATE}
-import com.scalway.scalatags.bootstrap3.abst.{B3Cls, B3ComplexOrCls, MediaQueryCls}
+import com.scalway.b3cls.impl.abst.{B3Cls, B3ComplexOrCls, MediaQueryCls}
+import B3Cls.{MODEL, CREATE}
 
 /**
   * Created by slovic on 29.01.16.

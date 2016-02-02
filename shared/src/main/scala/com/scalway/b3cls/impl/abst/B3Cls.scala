@@ -1,8 +1,8 @@
-package com.scalway.scalatags.bootstrap3.abst
+package com.scalway.b3cls.impl.abst
 
 import java.util.logging.Logger
 
-import com.scalway.scalatags.bootstrap3.abst.B3Cls._
+import B3Cls._
 
 /**
   * Created by slovic on 29.01.16.
@@ -50,6 +50,10 @@ trait B3Cls extends Any { self =>
   @deprecated("we should use append")
   def apply(cls:String):B3Cls = new B3Cls {
     override val allClassNames: MODEL = cls +: self.allClassNames
+  }
+
+  def ++(other:String) = new B3Cls() {
+    override protected val allClassNames: MODEL = self.allClassNames :+ other
   }
 
   def ++(other:B3Cls) = new B3Cls() {

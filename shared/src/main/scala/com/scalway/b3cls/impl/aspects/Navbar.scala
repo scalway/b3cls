@@ -1,6 +1,6 @@
-package com.scalway.scalatags.bootstrap3.aspects
+package com.scalway.b3cls.impl.aspects
 
-import com.scalway.scalatags.bootstrap3.abst.{B3Cls, B3SizedCls, B3StyledCls}
+import com.scalway.b3cls.impl.abst.B3Cls
 
 /**
   * Created by slovic on 29.01.16.
@@ -23,7 +23,7 @@ object Navbar {
     def text     = appendPost("text")
     def link     = appendPost("link")
     def brand    = appendPost("brand")
-    def toggle   = appendPost("toogle") //+collapsed
+    def toggle   = appendPost("toggle") //+collapsed
     def right    = appendPost("right")
     def header   = appendPost("header")
     def collapse = appendPost("collapse")

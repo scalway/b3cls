@@ -1,24 +1,28 @@
-package com.scalway.scalatagsb3example
+package com.scalway.b3cls.example
 
-import com.scalway.scalatags.b3
-import com.scalway.scalatags.bootstrap3.abst.B3Cls
+import com.scalway.b3cls.impl.abst.B3Cls
+import com.scalway.b3cls.b3
+
 import org.scalajs.dom
+import org.scalajs.dom.Element
 
 import scala.scalajs.js.JSApp
 import scala.scalajs.js.annotation.JSExport
 import scalatags.JsDom.all._
 import scalatags.JsDom.tags2.nav
+import scalatags.generic
+
 /**
   * Created by slovic on 02.02.16.
   */
 @JSExport
 class JSTutorialApp extends JSApp {
 
-  implicit def b3clsToModifier(b:B3Cls) = { cls := b.toString() }
+  implicit def b3clsToModifier(b:B3Cls):generic.AttrPair[Element, String] = { cls := b.toString() }
 
   @JSExport
   def main(): Unit = {
-    println("działa")
+    println("example scala.js launcher is running ...")
     dom.document.body.appendChild(view.render)
   }
 
@@ -27,7 +31,7 @@ class JSTutorialApp extends JSApp {
     div( b3.containerFluid,
       div( b3.navbar.header, //cls:="navbar-header",
         button(
-          b3.navbar.toggle ++ b3.collapse,//cls:="navbar-toggle collapsed",
+          b3.navbar.toggle ++ "collapsed",//cls:="navbar-toggle collapsed",
           tpe:="button",
           data.toggle:="collapse", data.target:="#navbar", aria.expanded:="false", aria.controls:="navbar",
           span( b3.srOnly, "Toggle navigation"),
